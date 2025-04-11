@@ -1,0 +1,277 @@
+/*fonts*/
+@import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
+
+.rubik-300 {
+  font-family: "Rubik", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.rubik-400 {
+  font-family: "Rubik", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.rubik-500 {
+  font-family: "Rubik", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+}
+
+:root {
+  --blue: hsl(246, 80%, 60%);
+  --work: hsl(15, 100%, 70%);
+  --play: hsl(195, 74%, 62%);
+  --study: hsl(348, 100%, 68%);
+  --exercise: hsl(145, 58%, 55%);
+  --social: hsl(264, 64%, 52%);
+  --self-care: hsl(43, 84%, 65%);
+  --very-dark-blue: hsl(226, 43%, 10%);
+  --dark-blue: hsl(235, 46%, 20%);
+  --desaturated-blue: hsl(235, 45%, 61%);
+  --pale-blue: hsl(236, 100%, 87%);
+}
+
+/*reset*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Rubik", sans-serif;
+}
+
+body {
+  color: white;
+  background-color: var(--very-dark-blue);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 4rem 2rem;
+}
+
+.dashboard {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  max-width: 1110px;
+  margin: 0 auto;
+}
+
+/* Profile Card */
+.profile-card {
+  background-color: var(--dark-blue);
+  border-radius: 20px;
+  grid-row: span 2;
+}
+
+.profile-info {
+  background-color: var(--blue);
+  border-radius: 20px;
+  padding: 2rem;
+}
+
+.profile-text {
+  margin-top: 2.5rem;
+}
+
+.profile-img {
+  width: 78px;
+  height: 78px;
+  border: 3px solid white;
+  border-radius: 50%;
+}
+
+.profile-info h1 {
+  color: var(--pale-blue);
+  font-size: 0.9rem;
+  font-weight: 400;
+  margin-bottom: 0.5rem;
+}
+
+.profile-info h2 {
+  font-size: 2.5rem;
+  font-weight: 300;
+  line-height: 1.2;
+}
+
+.time-nav {
+  padding: 1.5rem 2rem;
+}
+
+.time-nav ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.time-btn {
+  background: none;
+  border: none;
+  color: var(--desaturated-blue);
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.time-btn:hover {
+  color: white;
+}
+
+.time-btn.active {
+  color: white;
+}
+
+/* Time Cards */
+.time-cards {
+  grid-column: 2 / -1;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.time-card {
+  background-color: var(--dark-blue);
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.time-card:hover {
+  background-color: hsl(235, 45%, 25%);
+}
+
+.card-header {
+  position: relative;
+  height: 80px;
+  border-radius: 20px 20px 0 0;
+  overflow: hidden;
+}
+
+.work .card-header {
+  background-color: var(--work);
+}
+.play .card-header {
+  background-color: var(--play);
+}
+.study .card-header {
+  background-color: var(--study);
+}
+.exercise .card-header {
+  background-color: var(--exercise);
+}
+.social .card-header {
+  background-color: var(--social);
+}
+.self-care .card-header {
+  background-color: var(--self-care);
+}
+
+.card-header img {
+  position: absolute;
+  top: -10px;
+  right: 17px;
+  height: 79px;
+  width: auto;
+}
+
+.card-content {
+  padding: 1.8rem;
+  position: relative;
+  background-color: var(--dark-blue);
+  border-radius: 20px;
+  margin-top: -15px;
+  z-index: 1;
+}
+
+.card-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.card-title h3 {
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+.ellipsis {
+  color: var(--pale-blue);
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.ellipsis:hover {
+  color: white;
+}
+
+.time-data .hours {
+  font-size: 3.5rem;
+  font-weight: 300;
+  margin-bottom: 0.5rem;
+}
+
+.time-data .previous {
+  color: var(--pale-blue);
+  font-size: 0.9rem;
+}
+
+/* Attribution */
+.attribution {
+  position: fixed;
+  bottom: 1rem;
+  color: var(--pale-blue);
+  font-size: 0.8rem;
+  text-align: center;
+}
+
+.attribution a {
+  color: var(--blue);
+  text-decoration: none;
+}
+
+/* Responsive Design */
+@media (max-width: 1100px) {
+  .dashboard {
+    grid-template-columns: 1fr;
+    max-width: 400px;
+    gap: 1.5rem;
+  }
+
+  .profile-card {
+    grid-row: auto;
+  }
+
+  .profile-info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.5rem;
+  }
+
+  .profile-text {
+    margin-top: 0;
+  }
+
+  .profile-info h2 {
+    font-size: 1.5rem;
+  }
+
+  .time-nav ul {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .time-cards {
+    grid-column: auto;
+    grid-template-columns: 1fr;
+  }
+}
